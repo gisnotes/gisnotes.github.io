@@ -8,7 +8,7 @@
       <link href="/posts/eb2e8276/"/>
       <url>/posts/eb2e8276/</url>
       
-        <content type="html"><![CDATA[<details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a href="https://sandcastle.cesium.com/?src=FXAA.html&label=All">https://sandcastle.cesium.com/?src=FXAA.html&amp;label=All</a></p><iframe src="https://sandcastle.cesium.com/?src=FXAA.html&label=All" width="100%" height="400px" frameborder="0" loading="lazy" allowfullscreen></iframe></div></details><p>效果如下图所示：</p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/cesium/202504122336370.jpg?imageMogr2/quality/75/format/webp/interlace/0"></p><p>示例代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">terrain</span>: <span class="title class_">Cesium</span>.<span class="property">Terrain</span>.<span class="title function_">fromWorldTerrain</span>(),</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">camera</span>.<span class="title function_">setView</span>(&#123;</span><br><span class="line">  <span class="attr">destination</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cartesian3</span>(</span><br><span class="line">    <span class="number">1331419.302230775</span>,</span><br><span class="line">    -<span class="number">4656681.5022043325</span>,</span><br><span class="line">    <span class="number">4136232.6465900405</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="attr">orientation</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">HeadingPitchRoll</span>(</span><br><span class="line">    <span class="number">6.032455545102689</span>,</span><br><span class="line">    -<span class="number">0.056832496140112765</span>,</span><br><span class="line">    <span class="number">6.282360923090216</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="attr">endTransform</span>: <span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="property">IDENTITY</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">postProcessStages</span>.<span class="property">fxaa</span>.<span class="property">enabled</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sandcastle</span>.<span class="title function_">addToggleButton</span>(<span class="string">&quot;启用快速近似抗锯齿&quot;</span>, <span class="literal">true</span>, <span class="keyword">function</span> (<span class="params">checked</span>) &#123;</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">postProcessStages</span>.<span class="property">fxaa</span>.<span class="property">enabled</span> = checked;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> tileset = <span class="keyword">await</span> <span class="title class_">Cesium</span>.<span class="property">Cesium3DTileset</span>.<span class="title function_">fromIonAssetId</span>(<span class="number">75343</span>);</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(tileset);</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`tileset加载出错: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+        <content type="html"><![CDATA[<details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a href="https://sandcastle.cesium.com/?src=FXAA.html&label=All">https://sandcastle.cesium.com/?src=FXAA.html&amp;label=All</a></p><iframe src="https://sandcastle.cesium.com/?src=FXAA.html&label=All" width="100%" height="400px" frameborder="0" loading="lazy" allowfullscreen></iframe></div></details><p>快速近似抗锯齿（英语：Fast Approximate Anti-Aliasing，FXAA），由Nvidia员工Timothy Lottes开发的一种反锯齿算法。</p><p>效果如下图所示：</p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/cesium/202504122336370.jpg?imageMogr2/quality/75/format/webp/interlace/0"></p><p>示例代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">terrain</span>: <span class="title class_">Cesium</span>.<span class="property">Terrain</span>.<span class="title function_">fromWorldTerrain</span>(),</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">camera</span>.<span class="title function_">setView</span>(&#123;</span><br><span class="line">  <span class="attr">destination</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Cartesian3</span>(</span><br><span class="line">    <span class="number">1331419.302230775</span>,</span><br><span class="line">    -<span class="number">4656681.5022043325</span>,</span><br><span class="line">    <span class="number">4136232.6465900405</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="attr">orientation</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">HeadingPitchRoll</span>(</span><br><span class="line">    <span class="number">6.032455545102689</span>,</span><br><span class="line">    -<span class="number">0.056832496140112765</span>,</span><br><span class="line">    <span class="number">6.282360923090216</span>,</span><br><span class="line">  ),</span><br><span class="line">  <span class="attr">endTransform</span>: <span class="title class_">Cesium</span>.<span class="property">Matrix4</span>.<span class="property">IDENTITY</span>,</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">viewer.<span class="property">scene</span>.<span class="property">postProcessStages</span>.<span class="property">fxaa</span>.<span class="property">enabled</span> = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sandcastle</span>.<span class="title function_">addToggleButton</span>(<span class="string">&quot;启用快速近似抗锯齿&quot;</span>, <span class="literal">true</span>, <span class="keyword">function</span> (<span class="params">checked</span>) &#123;</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">postProcessStages</span>.<span class="property">fxaa</span>.<span class="property">enabled</span> = checked;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> tileset = <span class="keyword">await</span> <span class="title class_">Cesium</span>.<span class="property">Cesium3DTileset</span>.<span class="title function_">fromIonAssetId</span>(<span class="number">75343</span>);</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(tileset);</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`tileset加载出错: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       
       
       <categories>
@@ -2087,9 +2087,9 @@
       
         <tags>
             
-            <tag> SplitDirection </tag>
-            
             <tag> 3D Tiles </tag>
+            
+            <tag> SplitDirection </tag>
             
         </tags>
       
@@ -2438,9 +2438,9 @@
       
         <tags>
             
-            <tag> 摄影测量模型 </tag>
-            
             <tag> 3D Tiles </tag>
+            
+            <tag> 摄影测量模型 </tag>
             
             <tag> 分类 </tag>
             
@@ -3417,9 +3417,9 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -8758,11 +8758,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -9160,9 +9160,9 @@
             
             <tag> image </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> igc </tag>
             
@@ -9197,9 +9197,9 @@
             
             <tag> maptiler </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> igc </tag>
             
@@ -10077,11 +10077,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
