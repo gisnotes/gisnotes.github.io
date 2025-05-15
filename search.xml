@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Custom Shaders Property Texture【译】</title>
+      <link href="/posts/3e852a06/"/>
+      <url>/posts/3e852a06/</url>
+      
+        <content type="html"><![CDATA[<details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a href="https://sandcastle.cesium.com/?src=Custom%20Shaders%20Property%20Textures.html&label=All">https://sandcastle.cesium.com/?src=Custom%20Shaders%20Property%20Textures.html&amp;label=All</a></p><iframe src="https://sandcastle.cesium.com/?src=Custom%20Shaders%20Property%20Textures.html&label=All" width="100%" height="400px" frameborder="0" loading="lazy" allowfullscreen></iframe></div></details><p>效果如下图所示：</p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/cesium/PixPin_2025-05-15_23-52-24.gif?imageMogr2/quality/75/format/webp/interlace/0"></p><p>示例代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>, &#123;</span><br><span class="line">  <span class="attr">geocoder</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">sceneModePicker</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">homeButton</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">navigationHelpButton</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">baseLayerPicker</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">navigationInstructionsInitiallyVisible</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">fullscreenButton</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">selectionIndicator</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">skyBox</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">timeline</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">animation</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">shouldAnimate</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="attr">terrain</span>: <span class="title class_">Cesium</span>.<span class="property">Terrain</span>.<span class="title function_">fromWorldTerrain</span>(),</span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">const</span> scene = viewer.<span class="property">scene</span>;</span><br><span class="line">scene.<span class="property">globe</span>.<span class="property">depthTestAgainstTerrain</span> = <span class="literal">false</span>;<span class="comment">//开启深度检测</span></span><br><span class="line"></span><br><span class="line">viewer.<span class="property">cesiumWidget</span>.<span class="property">creditContainer</span>.<span class="property">style</span>.<span class="property">display</span> = <span class="string">&quot;none&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> tileset;</span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * MAXAR OWT Muscatatuk 摄影测量数据集，其属性纹理包含水平和垂直不确定性。</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  tileset = <span class="keyword">await</span> <span class="title class_">Cesium</span>.<span class="property">Cesium3DTileset</span>.<span class="title function_">fromIonAssetId</span>(<span class="number">2342602</span>);</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(tileset);</span><br><span class="line">  viewer.<span class="title function_">zoomTo</span>(tileset);</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`瓦片集加载出错: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> shaders = &#123;</span><br><span class="line">  <span class="attr">NO_TEXTURE</span>: <span class="literal">undefined</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * “CE90” 是90%概率下的圆误差(Circular Error at 90% Probability, CE90)，</span></span><br><span class="line"><span class="comment">   * 即在水平平面内，90% 的测量点落在以真实位置为中心、半径为 CE90 值的圆内。</span></span><br><span class="line"><span class="comment">   * “LE90” 是90%概率下的线误差 (Line Error at 90% Probability, LE90)</span></span><br><span class="line"><span class="comment">   * 详情请参考：https://www.kosmos-imagemall.com/index.php?m=wap&amp;a=show&amp;catid=73&amp;typeid=catid&amp;id=5808</span></span><br><span class="line"><span class="comment">   */</span></span><br><span class="line">  <span class="attr">UNCERTAINTY_CE90</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CustomShader</span>(&#123;</span><br><span class="line">    <span class="attr">fragmentShaderText</span>: <span class="string">`</span></span><br><span class="line"><span class="string">      void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material)</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        int horizontalUncertainty = fsInput.metadata.r3dm_uncertainty_ce90sum;</span></span><br><span class="line"><span class="string">        material.diffuse = vec3(float(horizontalUncertainty) / 255.0);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="attr">UNCERTAINTY_LE90</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CustomShader</span>(&#123;</span><br><span class="line">    <span class="attr">fragmentShaderText</span>: <span class="string">`</span></span><br><span class="line"><span class="string">      void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material)</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        int verticalUncertainty = fsInput.metadata.r3dm_uncertainty_le90sum;</span></span><br><span class="line"><span class="string">        material.diffuse = vec3(float(verticalUncertainty) / 255.0);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">  <span class="comment">// combined uncertainty</span></span><br><span class="line">  <span class="attr">UNCERTAINTY</span>: <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">CustomShader</span>(&#123;</span><br><span class="line">    <span class="attr">fragmentShaderText</span>: <span class="string">`</span></span><br><span class="line"><span class="string">      void fragmentMain(FragmentInput fsInput, inout czm_modelMaterial material)</span></span><br><span class="line"><span class="string">      &#123;</span></span><br><span class="line"><span class="string">        int uncertainty = fsInput.metadata.r3dm_uncertainty_ce90sum + fsInput.metadata.r3dm_uncertainty_le90sum;</span></span><br><span class="line"><span class="string">        material.diffuse = vec3(float(uncertainty) / 255.0);</span></span><br><span class="line"><span class="string">      &#125;</span></span><br><span class="line"><span class="string">    `</span>,</span><br><span class="line">  &#125;),</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Sandcastle</span>.<span class="title function_">addDefaultToolbarMenu</span>([</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&quot;水平不确定性&quot;</span>,</span><br><span class="line">    <span class="attr">onselect</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      <span class="comment">// customShader属性：用于应用于瓦片集中的所有瓦片的自定义着色器。</span></span><br><span class="line">      tileset.<span class="property">customShader</span> = shaders.<span class="property">UNCERTAINTY_CE90</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&quot;垂直不确定性&quot;</span>,</span><br><span class="line">    <span class="attr">onselect</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      tileset.<span class="property">customShader</span> = shaders.<span class="property">UNCERTAINTY_LE90</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&quot;综合不确定性&quot;</span>,</span><br><span class="line">    <span class="attr">onselect</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      tileset.<span class="property">customShader</span> = shaders.<span class="property">UNCERTAINTY</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="attr">text</span>: <span class="string">&quot;无不确定性&quot;</span>,</span><br><span class="line">    <span class="attr">onselect</span>: <span class="keyword">function</span> (<span class="params"></span>) &#123;</span><br><span class="line">      tileset.<span class="property">customShader</span> = shaders.<span class="property">NO_TEXTURE</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">]);</span><br><span class="line">tileset.<span class="property">customShader</span> = shaders.<span class="property">UNCERTAINTY_CE90</span>;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cesium </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 着色器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Custom Shaders Models【译】</title>
       <link href="/posts/b1957d8f/"/>
       <url>/posts/b1957d8f/</url>
@@ -2622,9 +2647,9 @@
       
         <tags>
             
-            <tag> 3D Tiles </tag>
-            
             <tag> SplitDirection </tag>
+            
+            <tag> 3D Tiles </tag>
             
         </tags>
       
@@ -2973,9 +2998,9 @@
       
         <tags>
             
-            <tag> 3D Tiles </tag>
-            
             <tag> 摄影测量模型 </tag>
+            
+            <tag> 3D Tiles </tag>
             
             <tag> 分类 </tag>
             
@@ -5062,9 +5087,9 @@
       
         <tags>
             
-            <tag> image </tag>
-            
             <tag> vector </tag>
+            
+            <tag> image </tag>
             
         </tags>
       
@@ -5913,9 +5938,9 @@
       
         <tags>
             
-            <tag> simple </tag>
-            
             <tag> openstreetmap </tag>
+            
+            <tag> simple </tag>
             
         </tags>
       
@@ -8186,9 +8211,9 @@
       
         <tags>
             
-            <tag> image </tag>
-            
             <tag> loading </tag>
+            
+            <tag> image </tag>
             
             <tag> events </tag>
             
@@ -8968,11 +8993,11 @@
             
             <tag> full-screen </tag>
             
+            <tag> xyz </tag>
+            
             <tag> drag </tag>
             
             <tag> zoom </tag>
-            
-            <tag> xyz </tag>
             
         </tags>
       
@@ -9691,15 +9716,15 @@
             
             <tag> maptiler </tag>
             
-            <tag> image </tag>
-            
             <tag> vector </tag>
+            
+            <tag> image </tag>
             
             <tag> kml </tag>
             
-            <tag> geojson </tag>
-            
             <tag> GPX数据 </tag>
+            
+            <tag> geojson </tag>
             
             <tag> igc </tag>
             
@@ -9734,9 +9759,9 @@
             
             <tag> kml </tag>
             
-            <tag> geojson </tag>
-            
             <tag> GPX数据 </tag>
+            
+            <tag> geojson </tag>
             
             <tag> igc </tag>
             
@@ -10440,9 +10465,9 @@
       
         <tags>
             
-            <tag> simple </tag>
-            
             <tag> openstreetmap </tag>
+            
+            <tag> simple </tag>
             
             <tag> attribution </tag>
             
@@ -10469,9 +10494,9 @@
       
         <tags>
             
-            <tag> openstreetmap </tag>
-            
             <tag> layers </tag>
+            
+            <tag> openstreetmap </tag>
             
             <tag> canvas </tag>
             
