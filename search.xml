@@ -2824,9 +2824,9 @@
       
         <tags>
             
-            <tag> 3D Tiles </tag>
-            
             <tag> SplitDirection </tag>
+            
+            <tag> 3D Tiles </tag>
             
         </tags>
       
@@ -3175,9 +3175,9 @@
       
         <tags>
             
-            <tag> 3D Tiles </tag>
-            
             <tag> 摄影测量模型 </tag>
+            
+            <tag> 3D Tiles </tag>
             
             <tag> 分类 </tag>
             
@@ -3499,9 +3499,9 @@
             
             <tag> geometry </tag>
             
-            <tag> rectangle </tag>
-            
             <tag> simple </tag>
+            
+            <tag> rectangle </tag>
             
             <tag> bbox </tag>
             
@@ -3766,6 +3766,8 @@
       
         <tags>
             
+            <tag> stadia-maps </tag>
+            
             <tag> stamen </tag>
             
             <tag> watercolor </tag>
@@ -3773,8 +3775,6 @@
             <tag> terrain-labels </tag>
             
             <tag> two-layers </tag>
-            
-            <tag> stadia-maps </tag>
             
         </tags>
       
@@ -4744,9 +4744,9 @@
             
             <tag> vector </tag>
             
-            <tag> geojson </tag>
-            
             <tag> webgl </tag>
+            
+            <tag> geojson </tag>
             
         </tags>
       
@@ -4829,9 +4829,9 @@
             
             <tag> layer </tag>
             
-            <tag> feature </tag>
-            
             <tag> point </tag>
+            
+            <tag> feature </tag>
             
         </tags>
       
@@ -4995,9 +4995,9 @@
       
         <tags>
             
-            <tag> vectortiles </tag>
-            
             <tag> epsg4326 </tag>
+            
+            <tag> vectortiles </tag>
             
             <tag> mapboxstyle </tag>
             
@@ -8640,9 +8640,9 @@
             
             <tag> webgl </tag>
             
-            <tag> sprite </tag>
-            
             <tag> point </tag>
+            
+            <tag> sprite </tag>
             
             <tag> ufo </tag>
             
@@ -9358,9 +9358,9 @@
             
             <tag> filter </tag>
             
-            <tag> sprite </tag>
-            
             <tag> feature </tag>
+            
+            <tag> sprite </tag>
             
         </tags>
       
