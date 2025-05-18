@@ -2824,9 +2824,9 @@
       
         <tags>
             
-            <tag> SplitDirection </tag>
-            
             <tag> 3D Tiles </tag>
+            
+            <tag> SplitDirection </tag>
             
         </tags>
       
@@ -3175,9 +3175,9 @@
       
         <tags>
             
-            <tag> 摄影测量模型 </tag>
-            
             <tag> 3D Tiles </tag>
+            
+            <tag> 摄影测量模型 </tag>
             
             <tag> 分类 </tag>
             
@@ -3499,9 +3499,9 @@
             
             <tag> geometry </tag>
             
-            <tag> simple </tag>
-            
             <tag> rectangle </tag>
+            
+            <tag> simple </tag>
             
             <tag> bbox </tag>
             
@@ -3766,8 +3766,6 @@
       
         <tags>
             
-            <tag> stadia-maps </tag>
-            
             <tag> stamen </tag>
             
             <tag> watercolor </tag>
@@ -3775,6 +3773,8 @@
             <tag> terrain-labels </tag>
             
             <tag> two-layers </tag>
+            
+            <tag> stadia-maps </tag>
             
         </tags>
       
@@ -4995,9 +4995,9 @@
       
         <tags>
             
-            <tag> epsg4326 </tag>
-            
             <tag> vectortiles </tag>
+            
+            <tag> epsg4326 </tag>
             
             <tag> mapboxstyle </tag>
             
@@ -9170,11 +9170,11 @@
             
             <tag> full-screen </tag>
             
-            <tag> xyz </tag>
-            
             <tag> drag </tag>
             
             <tag> zoom </tag>
+            
+            <tag> xyz </tag>
             
         </tags>
       
