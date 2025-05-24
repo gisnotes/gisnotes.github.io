@@ -80,7 +80,7 @@ if (m == 5 && dd == 4) {//青年节
 }
 if (m == 5 && dd == 20) {//520
     if (sessionStorage.getItem("isPopupWindow") != "1") {
-        Swal.fire("今年是520情人节\n快和你喜欢的人一起过吧！💑");
+        Swal.fire("今天是520情人节\n快和你喜欢的人一起过吧！💑");
         sessionStorage.setItem("isPopupWindow", "1");
     }
 }
