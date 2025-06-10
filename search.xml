@@ -3936,9 +3936,9 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> pick </tag>
-            
             <tag> style </tag>
+            
+            <tag> pick </tag>
             
         </tags>
       
@@ -4496,8 +4496,6 @@
       
         <tags>
             
-            <tag> stadia-maps </tag>
-            
             <tag> stamen </tag>
             
             <tag> watercolor </tag>
@@ -4505,6 +4503,8 @@
             <tag> terrain-labels </tag>
             
             <tag> two-layers </tag>
+            
+            <tag> stadia-maps </tag>
             
         </tags>
       
@@ -10629,13 +10629,13 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
             
             <tag> topojson </tag>
             
             <tag> igc </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> drag-and-drop-image-vector </tag>
             
@@ -10666,8 +10666,6 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
             
             <tag> topojson </tag>
@@ -10675,6 +10673,8 @@
             <tag> igc </tag>
             
             <tag> drag-and-drop </tag>
+            
+            <tag> GPX数据 </tag>
             
         </tags>
       
