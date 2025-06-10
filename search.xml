@@ -3072,7 +3072,7 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> 3D Tiles Insoector </tag>
+            <tag> 3D Tiles Inspector </tag>
             
         </tags>
       
@@ -3153,7 +3153,7 @@
             
             <tag> point cloud </tag>
             
-            <tag> shading </tag>
+            <tag> 着色器 </tag>
             
         </tags>
       
@@ -3236,9 +3236,9 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> point cloud </tag>
-            
             <tag> classification </tag>
+            
+            <tag> point cloud </tag>
             
         </tags>
       
