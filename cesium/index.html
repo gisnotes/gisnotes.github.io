@@ -6,12 +6,12 @@
 <meta property="og:description" content="原文链接及内容原文链接：https:&#x2F;&#x2F;sandcastle.cesium.com&#x2F;?label&#x3D;All                                                                  3D Models                         3D模型的加载">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://gisnotes.github.io/img/avatar.png">
-<meta property="article:published_time" content="2025-06-10T12:09:48.290Z">
-<meta property="article:modified_time" content="2025-06-10T12:09:48.290Z">
+<meta property="article:published_time" content="2025-06-14T03:30:57.430Z">
+<meta property="article:modified_time" content="2025-06-14T03:30:57.430Z">
 <meta property="article:author" content="风停在左肩">
 <meta property="article:tag" content="GIS,前端">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://gisnotes.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gisnotes.github.io/cesium/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><meta name="msapplication-TileColor" content="#49b1f5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/32.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+<meta name="twitter:image" content="https://gisnotes.github.io/img/avatar.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://gisnotes.github.io/cesium/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="manifest" href="/img/pwa/manifest.json"/><meta name="msapplication-TileColor" content="#49b1f5"/><link rel="apple-touch-icon" sizes="180x180" href="/img/pwa/apple-touch-icon.png"/><link rel="icon" type="image/png" sizes="32x32" href="/img/pwa/32.png"/><link rel="icon" type="image/png" sizes="16x16" href="/img/pwa/16.png"/><link rel="mask-icon" href="/img/pwa/32.png" color="#5bbad5"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
@@ -37,7 +37,7 @@
   },
   copyright: undefined,
   lightbox: 'fancybox',
-  Snackbar: undefined,
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#2d3035","position":"bottom-left"},
   source: {
     justifiedGallery: {
       js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
@@ -57,7 +57,7 @@
   isHome: false,
   isHighlightShrink: false,
   isToc: false,
-  postUpdate: '2025-06-10 20:09:48'
+  postUpdate: '2025-06-14 11:30:57'
 }</script><noscript><style type="text/css">
   #nav {
     opacity: 1
@@ -146,7 +146,7 @@
       }
     }
     detectApple()
-    })(window)</script><link rel="stylesheet" href="/css/progress_bar.css"><link rel="stylesheet" href="/css/custom.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><link rel="stylesheet" href="/css/custom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">412</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">449</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">6</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章相关</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-timeline"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-layer-group"></i><span> Openlayers</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/doc/"><i class="fa-fw fas fa-book-reader"></i><span> 说明文档</span></a></li><li><a class="site-page child" href="/quick-start/"><i class="fa-fw fas fa-bolt"></i><span> 快速入门</span></a></li><li><a class="site-page child" href="/tutorials/"><i class="fa-fw fas fa-book"></i><span> 教程</span></a></li><li><a class="site-page child" href="/faq/"><i class="fa-fw fas fa-question"></i><span> 常见问题</span></a></li><li><a class="site-page child" href="/workshop/"><i class="fa-fw fas fa-graduation-cap"></i><span> 研讨会</span></a></li><li><a class="site-page child" href="/examples/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-earth-americas"></i><span> CesiumJS</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cesium/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-brands fa-chrome"></i><span> 前端</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/javascript/"><i class="fa-fw fa-brands fa-js"></i><span> Javascript基础</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网址导航</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/homepage-banner.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">GIS学习笔记</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章相关</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-timeline"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-layer-group"></i><span> Openlayers</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/doc/"><i class="fa-fw fas fa-book-reader"></i><span> 说明文档</span></a></li><li><a class="site-page child" href="/quick-start/"><i class="fa-fw fas fa-bolt"></i><span> 快速入门</span></a></li><li><a class="site-page child" href="/tutorials/"><i class="fa-fw fas fa-book"></i><span> 教程</span></a></li><li><a class="site-page child" href="/faq/"><i class="fa-fw fas fa-question"></i><span> 常见问题</span></a></li><li><a class="site-page child" href="/workshop/"><i class="fa-fw fas fa-graduation-cap"></i><span> 研讨会</span></a></li><li><a class="site-page child" href="/examples/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-earth-americas"></i><span> CesiumJS</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cesium/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-brands fa-chrome"></i><span> 前端</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/javascript/"><i class="fa-fw fa-brands fa-js"></i><span> Javascript基础</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网址导航</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">CesiumJS 官方示例</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a target="_blank" rel="noopener" href="https://sandcastle.cesium.com/?label=All">https://sandcastle.cesium.com/?label=All</a></p>
+    })(window)</script><link rel="stylesheet" href="/css/progress_bar.css"><link rel="stylesheet" href="/css/custom.css"><svg aria-hidden="true" style="position:absolute; overflow:hidden; width:0; height:0"><symbol id="icon-sun" viewBox="0 0 1024 1024"><path d="M960 512l-128 128v192h-192l-128 128-128-128H192v-192l-128-128 128-128V192h192l128-128 128 128h192v192z" fill="#FFD878" p-id="8420"></path><path d="M736 512a224 224 0 1 0-448 0 224 224 0 1 0 448 0z" fill="#FFE4A9" p-id="8421"></path><path d="M512 109.248L626.752 224H800v173.248L914.752 512 800 626.752V800h-173.248L512 914.752 397.248 800H224v-173.248L109.248 512 224 397.248V224h173.248L512 109.248M512 64l-128 128H192v192l-128 128 128 128v192h192l128 128 128-128h192v-192l128-128-128-128V192h-192l-128-128z" fill="#4D5152" p-id="8422"></path><path d="M512 320c105.888 0 192 86.112 192 192s-86.112 192-192 192-192-86.112-192-192 86.112-192 192-192m0-32a224 224 0 1 0 0 448 224 224 0 0 0 0-448z" fill="#4D5152" p-id="8423"></path></symbol><symbol id="icon-moon" viewBox="0 0 1024 1024"><path d="M611.370667 167.082667a445.013333 445.013333 0 0 1-38.4 161.834666 477.824 477.824 0 0 1-244.736 244.394667 445.141333 445.141333 0 0 1-161.109334 38.058667 85.077333 85.077333 0 0 0-65.066666 135.722666A462.08 462.08 0 1 0 747.093333 102.058667a85.077333 85.077333 0 0 0-135.722666 65.024z" fill="#FFB531" p-id="11345"></path><path d="M329.728 274.133333l35.157333-35.157333a21.333333 21.333333 0 1 0-30.165333-30.165333l-35.157333 35.157333-35.114667-35.157333a21.333333 21.333333 0 0 0-30.165333 30.165333l35.114666 35.157333-35.114666 35.157334a21.333333 21.333333 0 1 0 30.165333 30.165333l35.114667-35.157333 35.157333 35.157333a21.333333 21.333333 0 1 0 30.165333-30.165333z" fill="#030835" p-id="11346"></path></symbol></svg><!-- hexo injector head_end start --><link rel="stylesheet" href="https://npm.elemecdn.com/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='screen'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 5.4.2"></head><body><link rel="stylesheet" href="/css/custom.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "/img/loading.gif" data-lazy-src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">424</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">454</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章相关</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-timeline"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-layer-group"></i><span> Openlayers</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/doc/"><i class="fa-fw fas fa-book-reader"></i><span> 说明文档</span></a></li><li><a class="site-page child" href="/quick-start/"><i class="fa-fw fas fa-bolt"></i><span> 快速入门</span></a></li><li><a class="site-page child" href="/tutorials/"><i class="fa-fw fas fa-book"></i><span> 教程</span></a></li><li><a class="site-page child" href="/faq/"><i class="fa-fw fas fa-question"></i><span> 常见问题</span></a></li><li><a class="site-page child" href="/workshop/"><i class="fa-fw fas fa-graduation-cap"></i><span> 研讨会</span></a></li><li><a class="site-page child" href="/examples/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-earth-americas"></i><span> CesiumJS</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cesium/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-brands fa-chrome"></i><span> 前端</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/javascript/"><i class="fa-fw fa-brands fa-js"></i><span> Javascript基础</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网址导航</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-home-page" id="page-header" style="background-image: url('/img/homepage-banner.webp')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">GIS学习笔记</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-newspaper"></i><span> 文章相关</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="fa-fw fas fa-timeline"></i><span> 时间轴</span></a></li><li><a class="site-page child" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-layer-group"></i><span> Openlayers</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/doc/"><i class="fa-fw fas fa-book-reader"></i><span> 说明文档</span></a></li><li><a class="site-page child" href="/quick-start/"><i class="fa-fw fas fa-bolt"></i><span> 快速入门</span></a></li><li><a class="site-page child" href="/tutorials/"><i class="fa-fw fas fa-book"></i><span> 教程</span></a></li><li><a class="site-page child" href="/faq/"><i class="fa-fw fas fa-question"></i><span> 常见问题</span></a></li><li><a class="site-page child" href="/workshop/"><i class="fa-fw fas fa-graduation-cap"></i><span> 研讨会</span></a></li><li><a class="site-page child" href="/examples/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-solid fa-earth-americas"></i><span> CesiumJS</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/cesium/"><i class="fa-fw fas fa-laptop-code"></i><span> 示例</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa-brands fa-chrome"></i><span> 前端</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/javascript/"><i class="fa-fw fa-brands fa-js"></i><span> Javascript基础</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 网址导航</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="page-site-info"><h1 id="site-title">CesiumJS 官方示例</h1></div></header><main class="layout hide-aside" id="content-inner"><div id="page"><div id="article-container"><details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a target="_blank" rel="noopener" href="https://sandcastle.cesium.com/?label=All">https://sandcastle.cesium.com/?label=All</a></p>
 <iframe src="https://sandcastle.cesium.com/?label=All" width="100%" height="400px" frameborder="0" seamless></iframe></div></details>
 
 <a href="/posts/be0f22c3/">
@@ -920,9 +920,9 @@
                 </div>
             </a>
 <a href="/posts/e50e06e1/">
-                <div title="Cesium Cesium Widget" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                <div title="Cesium Widget" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
-                        <span class="title">Cesium Cesium Widget</span>
+                        <span class="title">Cesium Widget</span>
                         <span class="title_trans">Cesium Widget</span>
                         <span class="file"></span>
                         <span class="content">Cesium.CesiumWidget 与 Cesium.Viewer 类似，但进行了精简。</span>
@@ -979,16 +979,6 @@
                     </div>
                 </div>
             </a>
-<a href="/posts/ea4132c7/">
-                <div title="Classification" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
-                    <div class="card_content">
-                        <span class="title">Classification</span>
-                        <span class="title_trans">绘制体积与摄影测量数据集的交集</span>
-                        <span class="file"></span>
-                        <span class="content">绘制体积与摄影测量数据集的交集。</span>
-                    </div>
-                </div>
-            </a>
 <a href="/posts/46cca5fa/">
                 <div title="Classification Types" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
@@ -996,6 +986,16 @@
                         <span class="title_trans">ClassificationType属性</span>
                         <span class="file"></span>
                         <span class="content">ClassificationType属性示例</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/ea4132c7/">
+                <div title="Classification" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Classification</span>
+                        <span class="title_trans">绘制体积与摄影测量数据集的交集</span>
+                        <span class="file"></span>
+                        <span class="content">绘制体积与摄影测量数据集的交集。</span>
                     </div>
                 </div>
             </a>
@@ -1059,6 +1059,26 @@
                     </div>
                 </div>
             </a>
+<a href="/posts/7f1adfba/">
+                <div title="Custom DataSource" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Custom DataSource</span>
+                        <span class="title_trans">自定义DataSource类</span>
+                        <span class="file"></span>
+                        <span class="content">实现一个自定义DataSource类。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/56b405ca/">
+                <div title="Custom Geocoder" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Custom Geocoder</span>
+                        <span class="title_trans">自定义地理编码器小部件</span>
+                        <span class="file"></span>
+                        <span class="content">将自定义数据源附加到地理编码器小部件。</span>
+                    </div>
+                </div>
+            </a>
 <a href="/posts/b4657024/">
                 <div title="Custom Per-Feature Post Process" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
@@ -1079,13 +1099,13 @@
                     </div>
                 </div>
             </a>
-<a href="/posts/56b405ca/">
-                <div title="Custom Geocoder" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+<a href="/posts/ecae31f7/">
+                <div title="Custom Shaders 3D Tiles" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
-                        <span class="title">Custom Geocoder</span>
-                        <span class="title_trans">自定义地理编码器小部件</span>
+                        <span class="title">Custom Shaders 3D Tiles</span>
+                        <span class="title_trans">自定义3D Tiles着色器</span>
                         <span class="file"></span>
-                        <span class="content">将自定义数据源附加到地理编码器小部件。</span>
+                        <span class="content">根据与相机的距离对瓦片进行着色。</span>
                     </div>
                 </div>
             </a>
@@ -1139,16 +1159,6 @@
                     </div>
                 </div>
             </a>
-<a href="/posts/a65f06c9/">
-                <div title="Drawing on Terrain" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
-                    <div class="card_content">
-                        <span class="title">Drawing on Terrain</span>
-                        <span class="title_trans">在地形上绘制几何图形</span>
-                        <span class="file"></span>
-                        <span class="content">在起伏不平的地形上绘制折线和多边形。</span>
-                    </div>
-                </div>
-            </a>
 <a href="/posts/66ebd38d/">
                 <div title="Distance Display Conditions" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
@@ -1156,6 +1166,26 @@
                         <span class="title_trans">动态切换图元显示形态</span>
                         <span class="file"></span>
                         <span class="content">根据观察者距离动态切换图元显示形态。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/ca4d5730/">
+                <div title="Drape Imagery on 3D Tiles" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Drape Imagery on 3D Tiles</span>
+                        <span class="title_trans">在3D Tiles上覆盖2D影像图层</span>
+                        <span class="file"></span>
+                        <span class="content">将带有道路和标签的2D影像图层覆盖在从iTwin平台流式传输的3D Tiles实景网格数据集上。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/a65f06c9/">
+                <div title="Drawing on Terrain" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Drawing on Terrain</span>
+                        <span class="title_trans">在地形上绘制几何图形</span>
+                        <span class="file"></span>
+                        <span class="content">在起伏不平的地形上绘制折线和多边形。</span>
                     </div>
                 </div>
             </a>
@@ -1186,6 +1216,16 @@
                         <span class="title_trans">实体追踪</span>
                         <span class="file"></span>
                         <span class="content">跟踪参考框架使用的案例。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/379b0618/">
+                <div title="Export KML" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Export KML</span>
+                        <span class="title_trans">导出为KML</span>
+                        <span class="file"></span>
+                        <span class="content">如何将CesiumJS场景的一部分导出为KML/KMZ文件。</span>
                     </div>
                 </div>
             </a>
@@ -1349,6 +1389,16 @@
                     </div>
                 </div>
             </a>
+<a href="/posts/545c7de0/">
+                <div title="Hello World" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Hello World</span>
+                        <span class="title_trans">Hello World</span>
+                        <span class="file"></span>
+                        <span class="content">Hello World入门示例。</span>
+                    </div>
+                </div>
+            </a>
 <a href="/posts/618faf35/">
                 <div title="High Dynamic Range" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
@@ -1479,6 +1529,16 @@
                     </div>
                 </div>
             </a>
+<a href="/posts/c73650b3/">
+                <div title="Interpolation" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Interpolation</span>
+                        <span class="title_trans">插值算法</span>
+                        <span class="file"></span>
+                        <span class="content">在一组离散的已知数据点的范围内构造新的数据点。</span>
+                    </div>
+                </div>
+            </a>
 <a href="/posts/c5766af5/">
                 <div title="Japan Buildings" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
                     <div class="card_content">
@@ -1486,6 +1546,76 @@
                         <span class="title_trans">加载日本建筑物数据</span>
                         <span class="file"></span>
                         <span class="content">加载日本区域地形数据和3D建筑物数据集。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/db267568/">
+                <div title="KML Tours" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">KML Tours</span>
+                        <span class="title_trans">KML游览</span>
+                        <span class="file"></span>
+                        <span class="content">加载KML数据并引导相机至预设目的地以完成游览。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/6856a96/">
+                <div title="KML" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">KML</span>
+                        <span class="title_trans">加载并渲染KML格式数据</span>
+                        <span class="file"></span>
+                        <span class="content">一个简单的加载kml格式数据的例子。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/751afd89/">
+                <div title="Labels" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Labels</span>
+                        <span class="title_trans">文字标签</span>
+                        <span class="file"></span>
+                        <span class="content">文字标签的渲染示例。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/e278611e/">
+                <div title="LensFlare" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">LensFlare</span>
+                        <span class="title_trans">镜头光晕</span>
+                        <span class="file"></span>
+                        <span class="content">调整镜头光晕参数的示例。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/d8e44ada/">
+                <div title="Lighting" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">Lighting</span>
+                        <span class="title_trans">光源</span>
+                        <span class="file"></span>
+                        <span class="content">设置自定义光源方向和颜色。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/a77cde13/">
+                <div title="LocalToFixedFrame" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">LocalToFixedFrame</span>
+                        <span class="title_trans">本地坐标系向固定坐标系(的转换)</span>
+                        <span class="file"></span>
+                        <span class="content">使用localFrameToFixedFrameGenerator进行适当的旋转。</span>
+                    </div>
+                </div>
+            </a>
+<a href="/posts/7d7599db/">
+                <div title="MSAA" referrerPolicy="no-referrer" class="card_box" style="background-color: #f8f9fa;width: 270px; height: 160px;">
+                    <div class="card_content">
+                        <span class="title">MSAA</span>
+                        <span class="title_trans">多重采样抗锯齿</span>
+                        <span class="file"></span>
+                        <span class="content">多重采样抗锯齿。</span>
                     </div>
                 </div>
             </a>
@@ -1619,7 +1749,7 @@
                     </div>
                 </div>
             </a>
-</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/homepage-banner.webp')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 <i style="color:red" class="fa fa-heartbeat fa-beat"></i> By 风停在左肩</div><div class="footer_custom_text">生活原本沉闷，但跑起来就有风🎈</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+</div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div></main><footer id="footer" style="background-image: url('/img/homepage-banner.webp')"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2025 <i style="color:red" class="fa fa-heartbeat fa-beat"></i> By 风停在左肩</div><div class="footer_custom_text">生活原本沉闷，但跑起来就有风🎈</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"></div><div id="rightside-config-show"><a class="icon-V hidden" onclick="switchNightMode()" title="浅色和深色模式转换"><svg width="25" height="25" viewBox="0 0 1024 1024"><use id="modeicon" xlink:href="#icon-moon"></use></svg></a><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button><button id="go-down" type="button" title="直达底部" onclick="btf.scrollToDest(document.body.scrollHeight, 500)"><i class="fas fa-arrow-down"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
   if (typeof pangu === 'object') pangu.autoSpacingPage()
   else {
     getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
