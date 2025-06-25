@@ -1218,12 +1218,12 @@
       <link href="/posts/ed32abb7/"/>
       <url>/posts/ed32abb7/</url>
       
-        <content type="html"><![CDATA[<p>Cesium官方示例共计206个示例，目前已翻译学习了一遍，大部分示例只是翻译了一下，有些在Vue3中复现了一下。</p><p>由于数据方面水土不服，因此有一大部分例子在开发中基本用不上，因此，只是大致看了一下实现思路，但我们可以学习官方示例的代码规范性、常用API在某些场景中的具体用法，这些都值得我们去借鉴。</p><p>已完成示例请点击 <a href="/cesium/">Cesium示例</a>。</p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/frontend/PixPin_2025-06-21_10-48-16.webp?imageMogr2/quality/75/format/webp/interlace/0" alt="Cesium所有示例的概览图示"></p>]]></content>
+        <content type="html"><![CDATA[<p>Cesium官方示例共计206个示例，目前已翻译学习了一遍，大部分示例只是翻译了一下，有些在Vue3中复现了一下。</p><p>由于数据方面水土不服，因此有一大部分例子在开发中基本用不上，因此，只是大致看了一下实现思路，但我们可以学习官方示例的代码规范性、常用API在某些场景中的具体用法，这些都值得我们去借鉴。</p><p>已完成示例请点击此处 <a href="/cesium/">Cesium示例</a>[👈<code>戳此访问</code>]，或者点击如下图所示的顶部菜单访问即可。</p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/frontend/PixPin_2025-06-25_21-12-32.jpg?imageMogr2/quality/75/format/webp/interlace/0" alt="翻译好的示例汇总页面"></p><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/frontend/PixPin_2025-06-21_10-48-16.webp?imageMogr2/quality/75/format/webp/interlace/0" alt="Cesium所有示例的概览图示"></p>]]></content>
       
       
       <categories>
           
-          <category> Cesium </category>
+          <category> Cesium汇总 </category>
           
       </categories>
       
@@ -6438,9 +6438,9 @@
       
         <tags>
             
-            <tag> esri </tag>
-            
             <tag> ArcGIS </tag>
+            
+            <tag> esri </tag>
             
             <tag> REST </tag>
             
@@ -8623,9 +8623,9 @@
             
             <tag> webgl </tag>
             
-            <tag> math </tag>
-            
             <tag> flood </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -8652,9 +8652,9 @@
             
             <tag> raster </tag>
             
-            <tag> flood </tag>
-            
             <tag> pixeloperation </tag>
+            
+            <tag> flood </tag>
             
         </tags>
       
@@ -11779,11 +11779,11 @@
       
         <tags>
             
+            <tag> ArcGIS </tag>
+            
             <tag> vector </tag>
             
             <tag> esri </tag>
-            
-            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -13098,11 +13098,11 @@
       
         <tags>
             
+            <tag> ArcGIS </tag>
+            
             <tag> vector </tag>
             
             <tag> esri </tag>
-            
-            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -13172,9 +13172,9 @@
             
             <tag> openstreetmap </tag>
             
-            <tag> rotation </tag>
-            
             <tag> center </tag>
+            
+            <tag> rotation </tag>
             
         </tags>
       
