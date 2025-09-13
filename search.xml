@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>3D Tiles Gaussian Splatting【译】</title>
+      <link href="/posts/13a178dec/"/>
+      <url>/posts/13a178dec/</url>
+      
+        <content type="html"><![CDATA[<details class="toggle" style="border: 1px solid black"><summary class="toggle-button" style="background-color: black;color: #fff">原文链接及内容</summary><div class="toggle-content"><p>原文链接：<a href="https://sandcastle.cesium.com/?src=3D%20Tiles%20Gaussian%20Splatting.html&label=All">https://sandcastle.cesium.com/?src=3D%20Tiles%20Gaussian%20Splatting.html&amp;label=All</a></p><iframe src="https://sandcastle.cesium.com/?src=3D%20Tiles%20Gaussian%20Splatting.html&label=All" width="100%" height="400px" frameborder="0" loading="lazy" allowfullscreen></iframe></div></details><p><img src="https://u-1303826255.cos.ap-nanjing.myqcloud.com/cesium/Snipaste_2025-09-13_16-00-50.jpg?imageMogr2/quality/75/format/webp/interlace/0"></p><p>示例代码如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> viewer = <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">Viewer</span>(<span class="string">&quot;cesiumContainer&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> tileset = <span class="keyword">await</span> <span class="title class_">Cesium</span>.<span class="property">Cesium3DTileset</span>.<span class="title function_">fromIonAssetId</span>(<span class="number">3667783</span>);</span><br><span class="line">  viewer.<span class="property">scene</span>.<span class="property">primitives</span>.<span class="title function_">add</span>(tileset);</span><br><span class="line">  viewer.<span class="title function_">zoomTo</span>(</span><br><span class="line">    tileset,</span><br><span class="line">    <span class="keyword">new</span> <span class="title class_">Cesium</span>.<span class="title class_">HeadingPitchRange</span>(</span><br><span class="line">      <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toRadians</span>(<span class="number">0.0</span>),</span><br><span class="line">      <span class="title class_">Cesium</span>.<span class="property">Math</span>.<span class="title function_">toRadians</span>(-<span class="number">15.0</span>),</span><br><span class="line">      <span class="number">200.0</span>,</span><br><span class="line">    ),</span><br><span class="line">  );</span><br><span class="line">&#125; <span class="keyword">catch</span> (error) &#123;</span><br><span class="line">  <span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">`Error loading tileset: <span class="subst">$&#123;error&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> Cesium </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 3D Tiles </tag>
+            
+            <tag> 高斯泼溅 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Azure Maps【译】</title>
       <link href="/posts/e0ff72f6/"/>
       <url>/posts/e0ff72f6/</url>
@@ -33,7 +60,7 @@
     
     
     <entry>
-      <title>3D Tiles Gaussian Splatting【译】</title>
+      <title>3D Tiles Gaussian Splatting Comparison【译】</title>
       <link href="/posts/13a178dc/"/>
       <url>/posts/13a178dc/</url>
       
@@ -6523,9 +6550,9 @@
       
         <tags>
             
-            <tag> esri </tag>
-            
             <tag> ArcGIS </tag>
+            
+            <tag> esri </tag>
             
             <tag> REST </tag>
             
@@ -7012,9 +7039,9 @@
             
             <tag> server </tag>
             
-            <tag> tile </tag>
-            
             <tag> strategy </tag>
+            
+            <tag> tile </tag>
             
             <tag> WFS </tag>
             
@@ -11539,11 +11566,11 @@
             
             <tag> full-screen </tag>
             
-            <tag> xyz </tag>
-            
             <tag> drag </tag>
             
             <tag> zoom </tag>
+            
+            <tag> xyz </tag>
             
         </tags>
       
@@ -11864,11 +11891,11 @@
       
         <tags>
             
+            <tag> ArcGIS </tag>
+            
             <tag> vector </tag>
             
             <tag> esri </tag>
-            
-            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -13183,11 +13210,11 @@
       
         <tags>
             
+            <tag> ArcGIS </tag>
+            
             <tag> vector </tag>
             
             <tag> esri </tag>
-            
-            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
