@@ -6550,9 +6550,9 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -11566,11 +11566,11 @@
             
             <tag> full-screen </tag>
             
+            <tag> xyz </tag>
+            
             <tag> drag </tag>
             
             <tag> zoom </tag>
-            
-            <tag> xyz </tag>
             
         </tags>
       
@@ -11891,11 +11891,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -13210,11 +13210,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
