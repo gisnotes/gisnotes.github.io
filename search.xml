@@ -4886,9 +4886,9 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> classification </tag>
-            
             <tag> terrain </tag>
+            
+            <tag> classification </tag>
             
         </tags>
       
@@ -4915,9 +4915,9 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> classification </tag>
-            
             <tag> point cloud </tag>
+            
+            <tag> classification </tag>
             
         </tags>
       
@@ -4998,9 +4998,9 @@
             
             <tag> 3D Tiles </tag>
             
-            <tag> photogrammetry </tag>
-            
             <tag> classification </tag>
+            
+            <tag> photogrammetry </tag>
             
         </tags>
       
@@ -6156,8 +6156,6 @@
       
         <tags>
             
-            <tag> stadia-maps </tag>
-            
             <tag> stamen </tag>
             
             <tag> watercolor </tag>
@@ -6165,6 +6163,8 @@
             <tag> terrain-labels </tag>
             
             <tag> two-layers </tag>
+            
+            <tag> stadia-maps </tag>
             
         </tags>
       
@@ -6544,9 +6544,9 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -7219,9 +7219,9 @@
             
             <tag> layer </tag>
             
-            <tag> point </tag>
-            
             <tag> feature </tag>
+            
+            <tag> point </tag>
             
         </tags>
       
@@ -8729,9 +8729,9 @@
             
             <tag> webgl </tag>
             
-            <tag> math </tag>
-            
             <tag> flood </tag>
+            
+            <tag> math </tag>
             
         </tags>
       
@@ -8758,9 +8758,9 @@
             
             <tag> raster </tag>
             
-            <tag> flood </tag>
-            
             <tag> pixeloperation </tag>
+            
+            <tag> flood </tag>
             
         </tags>
       
@@ -10521,9 +10521,9 @@
             
             <tag> maptiler </tag>
             
-            <tag> imagemanipulation </tag>
-            
             <tag> spy </tag>
+            
+            <tag> imagemanipulation </tag>
             
         </tags>
       
@@ -11030,9 +11030,9 @@
             
             <tag> webgl </tag>
             
-            <tag> point </tag>
-            
             <tag> sprite </tag>
+            
+            <tag> point </tag>
             
             <tag> ufo </tag>
             
@@ -11748,9 +11748,9 @@
             
             <tag> filter </tag>
             
-            <tag> feature </tag>
-            
             <tag> sprite </tag>
+            
+            <tag> feature </tag>
             
         </tags>
       
@@ -11885,11 +11885,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
@@ -12289,9 +12289,9 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> topojson </tag>
             
@@ -12326,9 +12326,9 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> topojson </tag>
             
@@ -13204,11 +13204,11 @@
       
         <tags>
             
-            <tag> ArcGIS </tag>
-            
             <tag> vector </tag>
             
             <tag> esri </tag>
+            
+            <tag> ArcGIS </tag>
             
             <tag> REST </tag>
             
