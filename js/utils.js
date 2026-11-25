@@ -217,10 +217,10 @@ const btf = {
   },
 
   /**
-   * 网址导航页的搜索过滤 + 分类标签
+   * 网址导航页的搜索过滤 + 分类标签 / 左侧手风琴两级菜单
    */
   initLinkFilter: () => {
-    const $flink = document.querySelector('#article-container .flink')
+    const $flink = document.querySelector('#article-container .flink-tabs-layout') || document.querySelector('#article-container .flink')
     if (!$flink) return
 
     const $search = $flink.querySelector('.flink-search-input')
@@ -228,48 +228,172 @@ const btf = {
     if ($flink.dataset.flinkFilterReady === 'true') return
     $flink.dataset.flinkFilterReady = 'true'
 
+    const isAccordion = Boolean($flink.querySelector('.flink-acc-group'))
+    const isTabLayout = isAccordion || Boolean($flink.querySelector('.flink-tab-nav'))
     const $searchBox = $search.closest('.flink-search')
     const $clear = $flink.querySelector('.flink-search-clear')
+    const $status = $flink.querySelector('.flink-search-status')
+    const $accGroups = [...$flink.querySelectorAll('.flink-acc-group')]
+    const $accHeaders = [...$flink.querySelectorAll('.flink-acc-header')]
     const $tags = [...$flink.querySelectorAll('.flink-tag')]
     const $groups = [...$flink.querySelectorAll('.flink-group')]
     const $empty = $flink.querySelector('.flink-empty')
 
-    // 预先缓存每张卡片和每个分类的可搜索文本
+    const escapeHTML = str => String(str).replace(/[&<>"']/g, s => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;',
+      "'": '&#39;'
+    }[s]))
+    const escapeRegExp = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const renderHighlight = (text, keyword) => {
+      if (!keyword) return escapeHTML(text)
+      const re = new RegExp(`(${escapeRegExp(keyword)})`, 'ig')
+      return text.split(re).map((part, idx) =>
+        idx % 2 === 1 ? `<mark class="flink-hl">${escapeHTML(part)}</mark>` : escapeHTML(part)
+      ).join('')
+    }
+
+    // 预先缓存每张卡片和每个分类的可搜索文本及原始文案
     $groups.forEach(group => {
       group.flinkCards = [...group.querySelectorAll('.flink-list-item')]
       group.flinkCards.forEach(card => {
+        card.flinkNameEl = card.querySelector('.flink-item-name')
+        card.flinkDescEl = card.querySelector('.flink-item-desc')
+        card.flinkOrigName = card.flinkNameEl ? card.flinkNameEl.textContent : ''
+        card.flinkOrigDesc = card.flinkDescEl ? card.flinkDescEl.textContent : ''
+        card.flinkHlKey = ''
         card.flinkText = card.textContent.replace(/\s+/g, ' ').toLowerCase()
       })
       const $heading = group.querySelector('.flink-name')
       group.flinkName = $heading ? $heading.textContent.replace(/\s+/g, ' ').toLowerCase().trim() : ''
     })
 
-    let activeTag = 'all'
+    const updateCardHighlight = (card, rawKeyword) => {
+      const key = rawKeyword.toLowerCase()
+      if (card.flinkHlKey === key) return
+      card.flinkHlKey = key
+      if (card.flinkNameEl) {
+        card.flinkNameEl.innerHTML = rawKeyword ? renderHighlight(card.flinkOrigName, rawKeyword) : escapeHTML(card.flinkOrigName)
+      }
+      if (card.flinkDescEl) {
+        card.flinkDescEl.innerHTML = rawKeyword ? renderHighlight(card.flinkOrigDesc, rawKeyword) : escapeHTML(card.flinkOrigDesc)
+      }
+    }
+
+    const syncHash = val => {
+      if (!isTabLayout || !val || !window.history || !window.history.replaceState) return
+      try {
+        window.history.replaceState(null, '', '#' + encodeURIComponent(val))
+      } catch (e) {}
+    }
+
+    let activeTag = isTabLayout ? (($tags[0] && $tags[0].dataset.flinkTarget) || '') : 'all'
+    let activeGroup = isAccordion ? (($accGroups[0] && $accGroups[0].dataset.flinkGroup) || '') : ''
+    const lastSubByGroup = {}
+
+    if (isAccordion) {
+      $accGroups.forEach(ag => {
+        const gId = ag.dataset.flinkGroup
+        const firstSub = ag.querySelector('.flink-acc-sub')
+        if (gId && firstSub) lastSubByGroup[gId] = firstSub.dataset.flinkTarget || ''
+      })
+    }
+
+    const setExpandedGroup = groupId => {
+      $accGroups.forEach(ag => {
+        const open = ag.dataset.flinkGroup === groupId
+        ag.classList.toggle('is-open', open)
+        const btn = ag.querySelector('.flink-acc-header')
+        if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false')
+      })
+    }
+
+    // 支持通过 URL hash 直接定位对应一级或二级分类
+    if (isTabLayout && window.location.hash) {
+      try {
+        const hashId = decodeURIComponent(window.location.hash.slice(1))
+        if (isAccordion) {
+          const matchedSub = $tags.find(t => t.dataset.flinkTarget === hashId)
+          if (matchedSub) {
+            activeGroup = matchedSub.dataset.flinkGroup || activeGroup
+            activeTag = hashId
+            lastSubByGroup[activeGroup] = hashId
+            setExpandedGroup(activeGroup)
+          } else {
+            const matchedGroup = $accGroups.find(ag => ag.dataset.flinkGroup === hashId)
+            if (matchedGroup) {
+              activeGroup = hashId
+              activeTag = lastSubByGroup[activeGroup] || ''
+              setExpandedGroup(activeGroup)
+            }
+          }
+        } else {
+          const matchedTag = $tags.find(tag => tag.dataset.flinkTarget === hashId)
+          if (matchedTag) {
+            activeTag = hashId
+            matchedTag.scrollIntoView({ block: 'nearest' })
+          }
+        }
+      } catch (e) {}
+    }
+
+    const syncTagUI = isSearching => {
+      $tags.forEach(item => {
+        const active = !isSearching && item.dataset.flinkTarget === activeTag
+        item.classList.toggle('is-active', active)
+        if (isTabLayout) item.setAttribute('aria-selected', active ? 'true' : 'false')
+      })
+    }
 
     const applyFilter = () => {
-      const keyword = $search.value.trim().toLowerCase()
-      const isFiltering = keyword !== '' || activeTag !== 'all'
+      const rawKeyword = $search.value.trim()
+      const keyword = rawKeyword.toLowerCase()
+      const isSearching = keyword !== ''
+      const isFiltering = isTabLayout || isSearching || activeTag !== 'all'
       let total = 0
+      let matchedGroups = 0
 
       $groups.forEach(group => {
-        const tagMatched = activeTag === 'all' || group.dataset.flinkId === activeTag
+        const tagMatched = isTabLayout
+          ? (isSearching || group.dataset.flinkId === activeTag)
+          : (activeTag === 'all' || group.dataset.flinkId === activeTag)
+
         let visible = 0
 
         group.flinkCards.forEach(card => {
-          const matched = tagMatched && (keyword === '' ||
+          const matched = tagMatched && (!isSearching ||
             card.flinkText.includes(keyword) ||
             group.flinkName.includes(keyword))
           card.classList.toggle('is-hidden', !matched)
+          updateCardHighlight(card, matched && isSearching ? rawKeyword : '')
           if (matched) visible++
         })
 
         group.classList.toggle('is-hidden', visible === 0)
+        if (visible > 0) matchedGroups++
         total += visible
       })
 
+      if (isTabLayout) {
+        syncTagUI(isSearching)
+        if ($status) {
+          if (isSearching) {
+            $status.textContent = `搜索“${rawKeyword}”：共找到 ${total} 个站点（${matchedGroups} 个分类）`
+            $status.style.display = 'block'
+          } else {
+            $status.style.display = 'none'
+          }
+        }
+      }
+
       if ($empty) $empty.style.display = total === 0 ? 'block' : 'none'
 
-      // 过滤状态下目录（列的是全部分类）会失真，先隐藏，取消过滤后恢复
+      // 切出原本隐藏的卡片时主动触发一次图片懒加载检查
+      window.lazyLoadInstance && window.lazyLoadInstance.update()
+
+      // 过滤/Tab 模式下目录（列的是全部分类）会失真，先隐藏，取消过滤后恢复
       const $toc = document.getElementById('card-toc')
       const $tocBtn = document.getElementById('mobile-toc-button')
       const $layout = document.getElementById('content-inner')
@@ -305,14 +429,75 @@ const btf = {
       })
     }
 
+    const scrollIfNeeded = () => {
+      const targetTop = Math.max(btf.getEleTop($flink) - 70, 0)
+      if (!isTabLayout || window.scrollY > targetTop) {
+        btf.scrollToDest(targetTop, 300)
+      }
+    }
+
+    if (isAccordion) {
+      $accHeaders.forEach(header => {
+        header.addEventListener('click', () => {
+          const gId = header.dataset.flinkGroup || ''
+          const $parent = header.closest('.flink-acc-group')
+          const wasOpen = Boolean($parent && $parent.classList.contains('is-open'))
+          if ($search.value !== '') {
+            $search.value = ''
+            if ($searchBox) $searchBox.classList.remove('has-value')
+          }
+          if (wasOpen) {
+            if ($parent) $parent.classList.remove('is-open')
+            header.setAttribute('aria-expanded', 'false')
+            applyFilter()
+            return
+          }
+          setExpandedGroup(gId)
+          activeGroup = gId
+          activeTag = lastSubByGroup[gId] || activeTag
+          syncHash(activeTag)
+          applyFilter()
+          scrollIfNeeded()
+        })
+      })
+    }
+
     $tags.forEach(tag => {
       tag.addEventListener('click', () => {
-        activeTag = tag.dataset.flinkTarget || 'all'
-        $tags.forEach(item => item.classList.toggle('is-active', item === tag))
+        if (isTabLayout && $search.value !== '') {
+          $search.value = ''
+          if ($searchBox) $searchBox.classList.remove('has-value')
+        }
+        activeTag = tag.dataset.flinkTarget || (isTabLayout ? '' : 'all')
+        if (isAccordion) {
+          activeGroup = tag.dataset.flinkGroup || activeGroup
+          lastSubByGroup[activeGroup] = activeTag
+          setExpandedGroup(activeGroup)
+          syncHash(activeTag)
+        } else if (!isTabLayout) {
+          $tags.forEach(item => item.classList.toggle('is-active', item === tag))
+        } else {
+          syncHash(activeTag)
+        }
         applyFilter()
-        btf.scrollToDest(Math.max(btf.getEleTop($flink) - 70, 0), 300)
+        scrollIfNeeded()
       })
     })
+
+    // 全局 "/" 快捷键聚焦搜索框（防 PJAX 重复注册）
+    if (!window.__flinkShortcutReady) {
+      window.__flinkShortcutReady = true
+      document.addEventListener('keydown', e => {
+        if (e.key !== '/' || e.ctrlKey || e.metaKey || e.altKey) return
+        const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : ''
+        if (tag === 'input' || tag === 'textarea' || (e.target && e.target.isContentEditable)) return
+        const $input = document.querySelector('#article-container .flink .flink-search-input')
+        if (!$input) return
+        e.preventDefault()
+        $input.focus()
+        $input.select()
+      })
+    }
 
     applyFilter()
   },

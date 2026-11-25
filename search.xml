@@ -7385,9 +7385,9 @@
       
         <tags>
             
-            <tag> vectortiles </tag>
-            
             <tag> epsg4326 </tag>
+            
+            <tag> vectortiles </tag>
             
             <tag> mapboxstyle </tag>
             
@@ -12289,11 +12289,11 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
             
             <tag> topojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> igc </tag>
             
@@ -12326,11 +12326,11 @@
             
             <tag> kml </tag>
             
-            <tag> GPX数据 </tag>
-            
             <tag> geojson </tag>
             
             <tag> topojson </tag>
+            
+            <tag> GPX数据 </tag>
             
             <tag> igc </tag>
             
